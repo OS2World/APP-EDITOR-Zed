@@ -1,0 +1,1 @@
+pkzip c:\progs\os2\zin\%1.zip *.*

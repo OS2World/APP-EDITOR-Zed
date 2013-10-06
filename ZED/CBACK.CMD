@@ -1,0 +1,1 @@
+pkzip c:\progs\os2\zed\%1.zip *.*

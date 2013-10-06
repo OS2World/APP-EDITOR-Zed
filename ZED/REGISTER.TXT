@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////////////
+
+ZED 1.0s
+Registration information.
+
+To register, send a check or money order for $15.00 US currency to:
+
+E. Bruce Shankle III
+6126 Bushmills Street
+Raleigh, NC 27613
+USA
+
+Please include your name and address or email address.
+You will receive confirmation of your registration along with your serial number.
+I can be reached at the above address or one of the folling email addresses:
+
+ivisoft@cybernetics.net
+Bruce_Shankle@msn.com
+
+
+Copyright information:
+
+ZED text editor for OS/2 is Copyright (C) E. Bruce Shankle III.
+ALL RIGHTS RESERVED
+
+ZED is a fully functional shareware text editor for OS/2.
+This means that you are allowed to use this highly reliable, easy-to-use editor
+and evaluate it for a period of 30 days.
+ZED may not be resold, except with prior written authorization from E. Bruce
+Shankle III, the author.  ZED may be copied for backup purposes or given without
+charge to third parties.
+
+If you wish to continue using ZED after the 30 day trial period, you must register
+with the author for the nominal fee of $15.00 US currency.
+When you register you will be assigned a serial number that you can use to 
+obtain support via email, free upgrades, and notices of new products.
+
+I've put many long hours of coding and testing into ZED.  My goal is to provide an editor
+for OS/2 that is easier to use and more functional than those supplied with the system.
+The shareware concept only works if the user does his/her part to support the authors.
+If you find ZED useful and do not register, you're hurting me and other shareware
+developers.  Shareware helps keep the software market competitive, and prices
+lower for everyone.  So please register.
+
+

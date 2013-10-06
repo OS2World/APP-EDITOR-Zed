@@ -1,0 +1,70 @@
+///////////////////////////////////////////////////////////
+// ZIN.RC
+// Resource file for ZIN installation program.
+//
+// History:
+//    Created:    04/09/95    1.0    Bruce Shankle
+///////////////////////////////////////////////////////////
+
+#include <os2.h>
+#include "getdir.h"
+#include "status.h"
+#include "rm.h"
+#include "resource.h"
+
+//Icon
+ICON  ID_RESOURCE  zin.ico
+
+//Status dialog
+RCINCLUDE status.dlg
+
+//Get dir dialog
+RCINCLUDE getdir.dlg
+
+//README.TXT dialog box
+RCINCLUDE rm.dlg
+
+
+//String table
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+    ID_APPNAME     "ZED - Install"
+    ID_FIRSTMSG    "This program prepares ZED 1.1s to run on your computer."
+    ID_DEFAULTDIR "C:\\ZED"
+    ID_CANCELINSTALL "The installation has been cancelled."
+    ID_QUERYCREATEDIR "The specified directory does not exist. Create it?"
+    ID_CANTCREATEDIR "The specified directory could not be created."
+
+    ID_ZEDEXE    "Checking ZED.EXE..."
+    ID_ZEDHLP    "Checking ZED.HLP..."
+    ID_ZEDICO    "Checking ZED.ICO..."    
+    ID_ZEDREADME "Checking README.TXT..."
+    ID_REGISTER "Checking REGISTER.TXT..."
+
+    ID_COPYZEDEXE    "Installing ZED.EXE..."
+    ID_COPYZEDHLP    "Installing ZED.HLP..."
+    ID_COPYZEDICO    "Installing ZED.ICO..."    
+    ID_COPYZEDREADME "Installing README.TXT..."
+    ID_COPYREGISTER "Installing REGISTER.TXT..."
+
+
+    ID_ZED_FILENAME "ZED.EXE"
+    ID_ZED_HELP_FILENAME "ZED.HLP"
+    ID_ZED_ICON_FILENAME "ZED.ICO"
+    ID_ZED_README_FILENAME "README.TXT"
+    ID_REGISTER_FILENAME "REGISTER.TXT"
+
+    ID_FILENOTFOUND "One of the files needed to install ZED is missing. Installation will end."
+    ID_FILESNOTCOPIED "A file could not be copied to the destination directory. Installation will end."
+
+    ID_CANTCREATEOBJECT "A ZED object could not be created on your desktop. You must do this manually."
+    ID_SUCCESS "ZED successfully installed! A ZED object has been created on the Desktop."
+    ID_CREATINGOBJECT "Creating Desktop ZED object..."
+
+    ID_PATCHFAILED "Install could not unlock ZED.EXE.  It is possible this distribution set is corrupted."
+    ID_PATCHINGZED "Unlocking ZED.EXE, please wait..."
+    
+    
+    
+END
+

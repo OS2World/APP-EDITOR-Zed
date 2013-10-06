@@ -1,0 +1,11 @@
+Known bug in ZED Alpha 8.
+
+If you start ZED alpha 8 from the command line and
+pass it an invalid filename, it will go into an infinite loop
+saying invalid file.
+
+Workaround: Don't do it.
+
+It will be fixed in the next release.
+
+-Bruce

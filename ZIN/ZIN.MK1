@@ -1,0 +1,80 @@
+!define BLANK ""
+d:\progs\os2\zin\chkfiles.obj : d:\progs\os2\zin\chkfiles.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 chkfiles.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan&
+ -mf -5r -bt=os2
+
+d:\progs\os2\zin\chkpath.obj : d:\progs\os2\zin\chkpath.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 chkpath.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan &
+-mf -5r -bt=os2
+
+d:\progs\os2\zin\getdir.obj : d:\progs\os2\zin\getdir.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 getdir.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan -&
+mf -5r -bt=os2
+
+d:\progs\os2\zin\msg.obj : d:\progs\os2\zin\msg.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 msg.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan -mf &
+-5r -bt=os2
+
+d:\progs\os2\zin\olf.obj : d:\progs\os2\zin\olf.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 olf.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan -mf &
+-5r -bt=os2
+
+d:\progs\os2\zin\olfshad.obj : d:\progs\os2\zin\olfshad.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 olfshad.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan &
+-mf -5r -bt=os2
+
+d:\progs\os2\zin\rm.obj : d:\progs\os2\zin\rm.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 rm.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan -mf -&
+5r -bt=os2
+
+d:\progs\os2\zin\status.obj : d:\progs\os2\zin\status.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 status.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan -&
+mf -5r -bt=os2
+
+d:\progs\os2\zin\zin.obj : d:\progs\os2\zin\zin.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ *wcc386 zin.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -zp4 -zq -otexan -mf &
+-5r -bt=os2
+
+d:\progs\os2\zin\zin.res : d:\progs\os2\zin\zin.rc .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ rc -i $[: -i C:\WATCOM\h -i C:\WATCOM\h\os2 -r zin.rc zin.res
+
+d:\progs\os2\zin\zin.exe : d:\progs\os2\zin\chkfiles.obj d:\progs\os2\zin\ch&
+kpath.obj d:\progs\os2\zin\getdir.obj d:\progs\os2\zin\msg.obj d:\progs\os2\&
+zin\olf.obj d:\progs\os2\zin\olfshad.obj d:\progs\os2\zin\rm.obj d:\progs\os&
+2\zin\status.obj d:\progs\os2\zin\zin.obj d:\progs\os2\zin\zin.def d:\progs\&
+os2\zin\zin.h d:\progs\os2\zin\zin.res .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zin
+ @%write zin.lk1 NAME zin
+ @%append zin.lk1 FIL chkfiles.obj,chkpath.obj,getdir.obj,msg.obj,olf.obj,ol&
+fshad.obj,rm.obj,status.obj,zin.obj
+ @%append zin.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b zin.imp 
+ @%append zin.lk1 LIBR zin.imp
+!endif
+ *wlink SYS os2v2 pm op m op st=16384 op maxe=25 op q op symf @zin.lk1
+!ifneq BLANK "zin.res"
+ rc -i $[: -i C:\WATCOM\h -i C:\WATCOM\h\os2 zin.res zin.exe
+!endif
+

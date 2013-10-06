@@ -1,0 +1,355 @@
+ 
+ We now have enough information to write a simple application to illustrate the points made 
+ in this chapter.  The application, HELP, contains a few menuitems and dialog boxes, but 
+ otherwise does nothing.  Its sole purpose is to allow the user to display the online help. 
+
+ HELP.C
+ 
+ #define INCL_WINHELP
+ #define INCL_WINHOOKS
+ #define INCL_WINSYS
+ 
+ #include <os2.h>
+ #include "help.h"
+ 
+ #define CLS_CLIENT               "SampleClass"
+ 
+ HWND hwndHelp ;
+ 
+ MRESULT EXPENTRY clientWndProc ( HWND hwndClient,
+                                  ULONG ulMsg,
+                                  MPARAM mpParm1,
+                                  MPARAM mpParm2 ) ;
+ 
+ 
+ BOOL EXPENTRY helpHook ( HAB habAnchor,
+                          SHORT sMode,
+                          USHORT usTopic,
+                          USHORT usSubTopic,
+                          PRECTL prclPos ) ;
+ 
+ int main ( VOID )
+ {
+    HAB            habAnchor ;
+    HMQ            hmqQueue ;
+    ULONG          ulFlags ;
+    HWND           hwndFrame ;
+    HELPINIT       hiInit ;
+    BOOL           bLoop ;
+    QMSG           qmMsg ;
+ 
+    habAnchor = WinInitialize ( 0 ) ;
+    hmqQueue = WinCreateMsgQueue ( habAnchor, 0 ) ;
+ 
+ 
+ 
+    WinRegisterClass ( habAnchor,
+                       CLS_CLIENT,
+                       clientWndProc,
+                       0,
+                       0 ) ;
+ 
+    ulFlags = FCF_SIZEBORDER | FCF_TITLEBAR |
+              FCF_TASKLIST | FCF_SHELLPOSITION |
+              FCF_SYSMENU | FCF_MENU ;
+ 
+    hwndFrame = WinCreateStdWindow ( HWND_DESKTOP,
+                                     WS_VISIBLE,
+                                     &ulFlags,
+                                     CLS_CLIENT,
+                                     "Help Manager"
+                                     " Sample Application",
+                                     0,
+                                     NULLHANDLE,
+                                     RES_CLIENT,
+                                     NULL ) ;
+ 
+    hiInit.cb = sizeof ( HELPINIT ) ;
+    hiInit.ulReturnCode = 0 ;
+    hiInit.pszTutorialName = NULL ;
+    hiInit.phtHelpTable = ( PHELPTABLE ) MAKEULONG (
+                                         HELP_CLIENT,
+                                         0xFFFF ) ;
+    hiInit.hmodHelpTableModule = NULLHANDLE ;
+    hiInit.hmodAccelActionBarModule = NULLHANDLE ;
+    hiInit.idAccelTable = 0 ;
+    hiInit.idActionBar = 0 ;
+    hiInit.pszHelpWindowTitle = "Help Manager Sample Help File" ;
+    hiInit.fShowPanelId = CMIC_HIDE_PANEL_ID ;
+    hiInit.pszHelpLibraryName = "HELP.HLP" ;
+ 
+    hwndHelp = WinCreateHelpInstance ( habAnchor,
+                                       &hiInit ) ;
+ 
+    if ( ( hwndHelp != NULLHANDLE ) &&
+       ( hiInit.ulReturnCode != 0 )) {
+ 
+       WinDestroyHelpInstance ( hwndHelp ) ;
+       hwndHelp = NULLHANDLE ;
+ 
+    } else {
+ 
+       WinAssociateHelpInstance ( hwndHelp, hwndFrame ) ;
+ 
+    } /* endif */
+ 
+    WinSetHook ( habAnchor,
+                 hmqQueue,
+                 HK_HELP,
+                 ( PFN ) helpHook,
+                 NULLHANDLE ) ;
+ 
+ 
+ 
+    bLoop  =  WinGetMsg (  habAnchor, &qmMsg, NULLHANDLE, 0, 0 ) ;
+    while ( bLoop ) {
+       WinDispatchMsg (  habAnchor, &qmMsg ) ;
+       bLoop  =  WinGetMsg ( habAnchor, &qmMsg, NULLHANDLE, 0, 0 ) ;
+    } /* endwhile */
+ 
+    WinReleaseHook ( habAnchor,
+                     hmqQueue,
+                     HK_HELP,
+                     ( PFN ) helpHook,
+                     NULLHANDLE ) ;
+ 
+    if ( hwndHelp != ( HWND ) NULL ) {
+       WinAssociateHelpInstance (  NULLHANDLE ,
+                                   hwndFrame ) ;
+       WinDestroyHelpInstance (  hwndHelp ) ;
+       hwndHelp  =  NULLHANDLE ;
+    } /* endif */
+ 
+    WinDestroyWindow ( hwndFrame ) ;
+    WinDestroyMsgQueue ( hmqQueue ) ;
+    WinTerminate ( habAnchor ) ;
+    return ( 0 ) ;
+ 
+ }
+ 
+ 
+ 
+ BOOL EXPENTRY helpHook ( HAB habAnchor,
+                          SHORT sMode,
+                          USHORT usTopic,
+                          USHORT usSubTopic,
+                          PRECTL prclPos )
+ {
+    if ( ( sMode == HLPM_WINDOW ) && ( hwndHelp != NULLHANDLE )) {
+       WinSendMsg ( hwndHelp,
+                    HM_DISPLAY_HELP,
+                    MPFROMLONG ( MAKELONG ( usTopic, 0 ) ) ,
+                    MPFROMSHORT ( HM_RESOURCEID ) ) ;
+       return TRUE ;
+    } else {
+       return FALSE ;
+    } /* endif */
+ }
+ 
+ MRESULT EXPENTRY clientWndProc ( HWND hwndClient,
+                                  ULONG ulMsg,
+                                  MPARAM mpParm1,
+                                  MPARAM mpParm2 )
+ {
+    switch ( ulMsg ) {
+ 
+ 
+ 
+    case WM_PAINT:
+       {
+          HPS        hpsPaint ;
+          RECTL      rclPaint ;
+ 
+          hpsPaint = WinBeginPaint ( hwndClient,
+                                     NULLHANDLE,
+                                     &rclPaint ) ;
+          WinFillRect ( hpsPaint, &rclPaint, SYSCLR_WINDOW ) ;
+          WinEndPaint ( hpsPaint ) ;
+       }
+       break ;
+ 
+    case WM_COMMAND:
+       switch ( SHORT1FROMMP ( mpParm1 ) ) {
+          case MI_HELPINDEX:
+             WinSendMsg ( hwndHelp,
+                          HM_HELP_INDEX,
+                          ( MPARAM ) 0,
+                          ( MPARAM ) 0 ) ;
+             break ;
+ 
+          case MI_GENERALHELP:
+             WinSendMsg ( hwndHelp,
+                          HM_EXT_HELP,
+                          ( MPARAM ) 0,
+                          ( MPARAM ) 0 ) ;
+             break ;
+ 
+          case MI_HELPFORHELP:
+             WinSendMsg ( hwndHelp,
+                          HM_DISPLAY_HELP,
+                          ( MPARAM ) 0,
+                          ( MPARAM ) 0 ) ;
+             break ;
+ 
+          case MI_KEYSHELP:
+             WinSendMsg ( hwndHelp,
+                          HM_KEYS_HELP,
+                          ( MPARAM ) 0,
+                          ( MPARAM ) 0 ) ;
+             break ;
+ 
+          case MI_PRODINFO:
+             WinMessageBox ( HWND_DESKTOP,
+                             hwndClient,
+                             "Copyright 1992"
+                             " by Larry Salomon, Jr.",
+                             "Help Sample",
+                             HLP_MESSAGEBOX,
+                             MB_OK | MB_HELP | MB_INFORMATION ) ;
+             break ;
+          default:
+             return WinDefWindowProc ( hwndClient,
+                                       ulMsg,
+                                       mpParm1,
+                                       mpParm2 ) ;
+ 
+ 
+       } /* endswitch */
+       break ;
+ 
+    case HM_QUERY_KEYS_HELP:
+       return MRFROMSHORT ( KEYSHELP_CLIENT ) ;
+ 
+    default:
+       return WinDefWindowProc ( hwndClient, ulMsg,
+          mpParm1, mpParm2 ) ;
+    } /* endswitch */
+ 
+    return MRFROMSHORT ( FALSE ) ;
+ }
+ 
+ HELP.IPF
+ 
+ :userdoc.
+ :title.Help Manager Sample Help File
+ 
+ :h1 res=259.Extended help
+ :p.Normally, you would write a longer panel here describing an
+ overview of the function of the active window.  Diagrams, etc.
+ are certainly welcome, since this is usually called when the
+ user has no idea of what is going on at the moment.
+ 
+ :h1 res=260.Keys help
+ :p.A list of the accelerator keys in use is appropriate here.
+ Do not forget the "hidden" accelerators in dialog
+ boxes and elsewhere such as :hp2.enter:ehp2., :hp2.escape:ehp2.,
+ and :hp2.F1:ehp2..
+ 
+ :h1 res=321.Help for menuitem "Help index..."
+ :p.Selecting this menuitem will display a help index.  Note that
+  the system has its own help index, while we can add our own
+ entries using the :i1. and :i2. tags.
+ 
+ :h1 res=322.Help for menuitem "General help..."
+ :p.Selecting this menuitem will display the general help panel.
+ 
+ :h1 res=323.Help for menuitem "Using help..."
+ :p.Selecting this menuitem will display the system help panel on
+ how to use the Help Manager.
+ 
+ :h1 res=324.Help for menuitem "Keys help..."
+ :p.Selecting this menuitem will display the active key list.
+ 
+ :h1 res=325.Help for menuitem "Product information..."
+ :p.Selecting this menuitem will display a message box with a
+ help button in it, to demonstrate the use of a help hook to
+ provide message box help.
+ 
+ :h1 res=326.Message box help
+ :p.This application demonstrates the use of the Help Manager to
+ provide online help for an application.  Help for both menuitems
+  and message boxes is shown.
+ :euserdoc.
+ 
+ HELP.RC
+ #include <os2.h>
+ #include "help.h"
+ 
+ MENU RES_CLIENT
+ {
+    SUBMENU "~Help", M_HELP
+    {
+       MENUITEM "Help ~index...", MI_HELPINDEX
+       MENUITEM "~General help...", MI_GENERALHELP
+       MENUITEM "~Using help...", MI_HELPFORHELP
+       MENUITEM "~Keys help...", MI_KEYSHELP
+       MENUITEM SEPARATOR
+       MENUITEM "~Product information...", MI_PRODINFO
+    }
+ }
+ 
+ HELPTABLE HELP_CLIENT
+ {
+    HELPITEM RES_CLIENT, SUBHELP_CLIENT, EXTHELP_CLIENT
+ }
+ 
+ HELPSUBTABLE SUBHELP_CLIENT
+ {
+    HELPSUBITEM MI_HELPINDEX, MI_HELPINDEX
+    HELPSUBITEM MI_GENERALHELP, MI_GENERALHELP
+    HELPSUBITEM MI_HELPFORHELP, MI_HELPFORHELP
+    HELPSUBITEM MI_KEYSHELP, MI_KEYSHELP
+    HELPSUBITEM MI_PRODINFO, MI_PRODINFO
+ }
+ 
+ 
+ HELP.H
+ 
+ #define RES_CLIENT               256
+ #define HELP_CLIENT              257
+ #define SUBHELP_CLIENT           258
+ #define EXTHELP_CLIENT           259
+ #define KEYSHELP_CLIENT          260
+ #define M_HELP                   320
+ #define MI_HELPINDEX             321
+ #define MI_GENERALHELP           322
+ #define MI_HELPFORHELP           323
+ #define MI_KEYSHELP              324
+ #define MI_PRODINFO              325
+ #define HLP_MESSAGEBOX           326
+ 
+ 
+ HELP.MAK
+ 
+ HELP.EXE:                     HELP.OBJ HELP.RES HELP.HLP
+         LINK386 @<<
+ HELP,
+ HELP,
+ HELP,
+ OS2386
+ HELP
+ <<
+         RC HELP.RES HELP.EXE
+ 
+ HELP.OBJ:                     HELP.C HELP.H
+         ICC -C+ -Kb+ -Ss+ HELP.C
+ 
+ HELP.RES:                     HELP.RC HELP.H
+         RC -r HELP.RC HELP.RES
+ 
+ HELP.HLP:                     HELP.IPF
+         IPFC HELP.IPF
+ 
+ 
+ HELP.DEF
+ 
+ NAME  HELP  WINDOWAPI
+ 
+ DESCRIPTION 'Help Example
+ Copyright 1992-1994 by Larry Salomon.
+ All rights reserved.'
+ 
+ STACKSIZE 32768
+ 
+ 
+

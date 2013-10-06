@@ -1,0 +1,12 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ZED.DEF
+;Bruce Shankle
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+NAME    ZED  WINDOWAPI
+DESCRIPTION 'ZED Text Editor'
+PROTMODE
+
+
+
+

@@ -1,0 +1,459 @@
+/////////////////////////////////////////////////////////////////////
+IMPORTANT LAST-MINUTE NOTES:
+
+This is the tentative shareware release of ZED.
+Don't give it to anyone yet. I'm awaiting you're review of
+ZED 1.0s before I give the go-ahead to distribute it.
+
+To repeat:
+
+
+
+!!!! DO NOT DISTRIBUTE ZED UNTIL I SAY YOU CAN !!!!!!
+
+
+
+ZED alpha tester documentation
+Updated: 03/29/1995    by Bruce Shankle
+
+ZED LICENSE AGREEMENT:
+Although I have made every effort to insure that ZED is a stable program,
+I can not be held responsible for any damage ZED.EXE may cause to you, 
+your data, or your computer.  ZED is owned by Bruce Shankle.  You may 
+not make copies for any other purpose than backup without my express 
+written or emailed permission.
+IF YOU DO NOT ACCEPT THE ABOVE TERMS, THEN YOU MAY NOT
+USE ZED. BY USING ZED, YOU ARE AGREEING TO THE ABOVE TERMS.
+
+I have sent you ZED_10S.EXE.
+This file is a self extracting archive that contains the shareware
+release ZED.EXE 1.0s.
+
+Decoding ZED_10S.EXE:
+1. Save the email message a text file called ZED_10S.TXT.
+2. Then enter "uudecode ZED_10S.TXT" at the prompt.
+   This will create ZED_10S.EXE.
+3. Download ZED_10S.EXE to your local machine.
+
+3.5 BACK UP YOUR CURRENT COPY OF ZED.EXE AND ZED.INI IN CASE
+    THE NEW VERSION OF ZED HAS PROBLEMS
+
+4. Run ZED_10S.EXE (This is a DOS program)
+5. ZED_10S.EXE creates :
+    ZED.EXE -   Shareware version 1.0s
+    ZED.ICO -    ZED Icon
+    ZED.HLP -    ZED Online documenatation
+    README.TXT - Last minute info and copyright notice.
+
+/////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////
+ZED Alpha 10 Release notes:
+
+Dear ZED Alpha Tester,
+
+
+Please refer to the online documentation for more information on
+this alpha release of ZED.
+
+I will work on the highest priority features first, so if you would,
+please return the following list to me with priorities.
+1 is the highest priority.  This is your chance
+to take part in the development of ZED.
+I know some
+
+I am trying to order this list based on your feedback:
+
+Priority	Feature
+--------	--------------------------------
+                -Delete file option    (this was my idea)
+                -Syntax hi-lighting    (for C code)
+                -Bracket matching
+                -Disable keyboard buffering for pageup/
+                pagedown, and up down arrow keys
+                -Option to retain the system cursor 
+                instead of the I-beam one
+
+**New         -Option to create file if it does not exist
+                    when passed as argument on command line.
+
+**New         -Option to import a file.
+
+**New         -Print preview
+
+Please feel free to add to this list.
+
+
+---------------------------------------------------------------
+Please reply to the following questions regarding ZED:
+NOTE: There are some new questions in the list.
+
+Did the ZED icon show up when you added ZED to OS/2?
+
+Did it give you any problems?
+
+Did you like the available printing options?
+
+Did printing work?
+
+Do you have suggestions that might make alpha testing
+better? 
+
+Is alpha testing ZED lame or is it fun?
+
+Do you like getting the latest version of ZED each week?
+
+Is ZED still better than E.EXE?
+
+Does ZED fill a niche for OS/2 text editors that
+is currenly not filled?
+
+When ZED is finished I've considered writing
+a true word processor called ZED-Pro or something
+of that nature.  Does the quality of ZED lead you to
+believe that I could write a cool word processor for
+OS/2?  If ZED-Pro becomes a reality, would you be
+interested in testing it?
+
+Is ZED fast enough?
+
+Is ZED something you would suggest to a friend?
+
+Do you have suggestions that can make ZED better?
+
+If ZED were shareware, would you register it?
+
+Did you discover any bugs?
+
+Is there anything that could be added to the status bar
+to make it better?
+
+Thanks to everyone for taking the time to use ZED and give
+feedback.
+
+-Bruce
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+ZED bug list.
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////
+ZED project history.
+
+01/01/1995	Start project
+
+01/02/1995	Determine goals:	
+			-create simple text editor
+			-operating system: OS/2
+			-program type: Presentation Manager , GUI
+			-no file size limitations
+			-must be stable
+			-must load fast
+			-32 bit flat memory model
+
+01/03/1995	Determine tools
+
+			-Language:			C
+			-Compiler :			Watcom 10.0a
+			-Development OS:		OS/2 3.0 (Warp)
+			-Development platform:	486-DX2-66
+                                                        8 megs of ram
+			
+01/03/1995	Pseudo-coded editor
+
+01/05/1995	Begin actual coding
+
+01/10/1995	Added multi-threaded file IO, finished coding alpha 1
+
+01/10/1995	Extensive testing.
+
+01/11/1995	Built alpha 1 and distributed to alpha testers.
+
+
+01/22/1995 	Got feedback from alpha testers.
+
+01/22/1995	Added keyboard accelerators to menu.
+
+01/22/1995	Added Find capability.
+
+01/22/1995	Added "Save and exit" to file menu
+
+01/22/1995	Added "Find next", "Find previous", "Replace" to 
+		Edit menu. These options will be disabled until
+		the actual coding is complete.
+
+01/22/1995	Tested all keyboard accelerators. 
+		Tested "Save and exit" option
+
+01/22/1995	Discovered bug: ZED does not warn if disk space
+		is insufficient to store file when saving.
+		Fixed bug.
+
+01/22/1995	Distributed Alpha 2 to alpha testers.
+
+
+______________________________________________
+01/23/1995	Began Alpha 3 rev.
+
+01/23/1995	Added alpha revision number to
+		About box.
+
+01/23/1995	Coded "Find Next". Made logic such that 
+		when find next reaches the end
+		of the text it will wrap around to the beginning
+		automatically.
+
+01/23/1995	Coded "Replace" dialog box.  Removed
+		"Find Previous". Not a high priority option.
+
+01/24/1995	Added "*" to frame title if text is modified.
+		When text is saved, "*" disappears. I found this
+		common on some editors.
+
+01/24/1995	Added "Verify" to replace logid. This allows replace
+		verification. Coded Replace/Verify logic.
+
+01/24/1995	Researched real-time scroll bars.  The MLE
+		control only sends vertical scrolling messages 
+		when the mouse is released after a scroll.
+		Real-time scrolling will not be possible with the 
+		current set-up. I will have to use a separate scroll
+		bars (Not the ones built into the MLE class) in
+		order to achieve real-time scrolling. I may work on
+		this next week.
+
+01/24/1995	Made "Undo" menu option enabled/disabled depending
+		on whether or not an operation can be undone.
+		Originally, this was always enabled, even when nothing
+		could be undone.
+
+01/24/1995	Added "*" flag to window title to show
+		when a change as made to the text.
+		Flag goes away when file is saved.
+
+01/24/1995 	Tested all features added since Alpha 2.
+
+01/24/1995	Distributes Alpha 3 to alpha testers.
+
+___________________________________________________________
+01/25/1995   Began work on Alpha 4
+
+
+01/25/1995	Made "Paste" menuitem disabled if there was no
+		text in the clipboard.
+
+01/25/1995    Designed options to change use of Tab to insert spaces
+                 and began working on code.
+
+01/26/1995    Tabs are no longer inserted when you press the tab key. I put in 
+                spaces instead.  But tabs will come back by using the 
+                "Settings... Tabs" option which I haven't coded yet. Bear with 
+                me. The "Tab" settings window doesn't do anything at this 
+                point.
+
+01/26/1995    Added real-time vertical scrolling. I managed to find a "trick" 
+                to do this that made life easier. I sub-classed the MLE window
+                procedure and trapped vertical scrolling messages so I could 
+                update the MLE window.  I also found a bug in OS/2's MLE 
+                control while doing this.  The Vertical scroll bar does not re-
+                paint properly. This is because IBM chose to use the a dynamic 
+                sizing scroll bar. It want's to change it's size each time you 
+                scroll, but when I intercept scrolling messages from MLE it 
+                seems to "forget" that it's a dynamic sizer, and doesn't resize.
+                (Big black lines appear in it too. Things that make you go 
+                hmmm....) 
+                To work around this I force the scroll bar to repaint itself.
+                This makes it "flicker" at the right edge a little, 
+                but it's not that noticeable and it won't hurt
+                anything. Probably can't even see it with a fast video card.
+                Now I need to finish up the tab settings options.
+
+01/28/1995    Finished "Settings-Tabs..." logic. Now tabs can be set to a 
+                specified number of spaces (1-20) or the tab character 
+                can be used.
+
+
+---------------------------------------------------------------
+01/28/1995    Began work on alpha 5.
+
+01/29/1995    Added status bar to track current line and column, insert state,
+                caps lock key state, and num lock key state. Gave status bar a
+                3-D look. Added code for status bar. (This turned out to
+                be much more work than I thought it would be.)
+
+01/30/1995    Added "Word wrap" option to Settings menu.
+
+01/30/1995    Made the "Find" button the default button in the find
+                dialog. Made the "Verify" button the default button in
+                the replace dialog. Made the "OK" button the default
+                button in the Tab and About dialog.
+
+01/30/1995    Discovered another bug in the IBM MLE control. It
+                doesn't properly query the Key-state table when the
+                insert key is pressed. I want the status bar to have
+                "INS" and "OVR" for insert mode and overwrite mode.
+                I'll see what I can do to work around this. So, the 
+                INS/OVR may be incorrect depending on the state
+                of a user's system. Although this is a minor 
+                problem, I don't like it.
+
+01/31/1995    Added current time to status bar.
+
+01/31/1995    Made status visible or not visible based on menu selection
+                "Status Bar" in the "Settings menu."
+
+01/31/1995    Distributed Alpha 5 to alpha testers.
+
+----------------------------------------------------------------
+01/31/1995    Began work on Alpha 6.
+
+02/01/1995    Changed name from BEDIT to ZED.
+
+02/01/1995    Designed new, more professional looking icon.
+
+02/01/1995    Made the file dialog boxes "remember" what directory you're
+                in so you don't have to keep searching directories for files.
+
+02/02/1995    Made the program multi-task better when opening large files.
+                i.e. > 500K
+
+02/03/1995    Added a %loaded to the title bar when loading.  Now when loading a
+                a 1 meg file, you can see how much is done.
+
+02/04/1995    Sent note to alpha testers that the named had changed.
+
+02/05/1995    Started coding INI support.
+
+02/05/1995    Saved window size and position in INI file.
+
+02/05/1995    Save window background color in INI file.
+
+02/06/1995    Save font in INI file.
+
+02/07/1995    Send Alpha 6 out for tests.
+
+----------------------------------------------------------------
+02/08/1995    Began work on Alpha 7. (Lot of alphas, hugh? :)  )
+
+02/08/1995    Added menu options to change color and font.
+
+02/09/1995    Made ICON so it has bitmaps for all known modes:
+                    CGA, EGA, XGA, VGA and small versions of each too. This
+                 has greatly increased the size of ZED (About 35K)
+
+02/09/1995    Save Tab settings in INI file
+
+02/09/1995    Save Status Bar ON/OFF in INI file.
+
+02/09/1995    Added DEFAULTICON to resource file so ZED icon shows up
+                 in PM when you add ZED from a program template.
+
+02/12/1995    Added recent file list logic.
+
+02/12/1995    Made ZED capable or reading files with R attribute set.
+                 (How stupid of me not to notice this earlier.)
+
+02/12/1995    Made find and replace dialogs verify that user has entered some
+                 text to search or replace.
+
+02/12/1995    Made dialog boxes centered when they come up.
+
+02/13/1995    Added auto-indent capability.
+
+02/13/1995    Send Alpha 7 out for tests.
+
+-----------------------------------------------------------
+
+02/14/1995    Took Valentines day off...
+
+02/15/1995 thru 02/20/1995  Failed to track project, but I worked on it
+                  a whole lot.
+
+02/21/1995    Sent alpha 8 out for testing.
+
+-----------------------------------------------------------
+02/22/1995    Began work on alpha 9
+
+02/22/1995    Fixed bug with invlalid file name from command line.
+
+02/22/1995    Made a dialog box for color changes that was less confusing.
+
+02/22/1995    Color of text and background cannot be made the same now.
+
+02/22/1995    Made palettes re-appear after a color or font change.
+
+02/23/1995    Added help buttons and linked to case sensitive help on
+                 Tab and Autosave dialog windows.
+
+02/23/1995    Made online help extensive.
+
+02/24/1995    Added real-time horizontal scrolling. This was a bitch.
+
+02/24/1995    Optimized Vertical scrolling, was wasting CPU time calculating
+                 new viewing position.
+
+02/24/1995    Optimized Horizontal scrolling.
+
+02/24/1995    Made find and find/replace dialogs auto-select text.
+
+02/27/1995    Sent alpha 9 out for testing.
+
+-----------------------------------------------------------
+02/28/1995    Began work on Alpha 10
+
+02/28/1995    Made "MODIFIED" 3D box larger so it doesn't go past 
+                  the boundaries at high resolutions.
+
+03/01/1995    Fixed recent file list.
+                  
+02/28/1995    Made it so a file that did not exist could be created.
+
+03/04/1995    Got printing to partially work.
+
+03/05/1995    Made control+keys work when caps lock is down.
+
+03/05/1995    Discovered auto-indent is broken. Causes all text to
+                 revert to black on some display cards.
+
+03/05/1995    Made file menu options disabled when they are not
+                        valid.
+
+03/05/1995    Printing now working, Cool!
+
+03/07/1995    Distributed ZED alpha 10 to testers.
+
+-----------------------------------------------------------
+03/08/1995    Began work on Alpha 11
+
+03/09/1995    Added import file option.
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////
+Current alpha testers list
+
+Email address				Serial number
+------------------------	--------------------------
+SL65R@cc.usu.edu                        052671-ZED-000-000-005A
+akramer@dres.dnd.ca                      052671-ZED-000-000-006A
+johnson@access.digex.net                 052671-ZED-000-000-007A
+richm@ims.com                           052671-ZED-000-000-008A
+dtn0546@utagraph.uta.edu                052671-ZED-000-000-009A
+darrel@GAS.UUG.Arizona.EDU            052671-ZED-000-000-010A
+jupiter!zeus@downtown.oche.de          052671-ZED-000-000-011A
+johnson@access.digex.net                052671-ZED-000-000-012A
+grimes@netcom.com                      052671-ZED-000-000-013A
+89patels@wave.scar.utoronto.ca          052671-ZED-000-000-014A
+hl@haktar.ph2.Uni-Koeln.DE              052671-ZED-000-000-015A
+amits@ibm.net                            052671-ZED-000-000-016A
+glen@med.unc.edu                         052671-ZED-000-000-017A
+mripke@cc.weber.edu                      052671-ZED-000-000-018A
+bobt@eagle.ais.net                         052671-ZED-000-000-019A   
+//////////////////////////////////////////////////////////////////////

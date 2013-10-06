@@ -1,0 +1,227 @@
+/////////////////////////////////////////////////////////////////////////////////
+//ZED.RC
+//
+#define MAINRESOURCE
+#define ID_INSTALLDATE 10000
+#include <os2.h>
+#include "resource.h"
+#include "find.h"
+#include "about2.h"
+#include "replace.h"
+#include "verify.h"
+#include "tab.h"
+#include "autosave.h"
+#include "colorchg.h"
+
+//Printing
+#include "prnt.h"
+#include "dialog.h"
+RCINCLUDE PRNT.DLG
+
+
+//Icon
+ICON  ID_RESOURCE  zed.ico
+//DEFAULTICON zed.ico
+
+//Help tables
+HELPTABLE HELP_CLIENT
+{
+   HELPITEM ID_RESOURCE, SUBHELP_CLIENT, EXTHELP_CLIENT
+}
+ 
+HELPSUBTABLE SUBHELP_CLIENT
+{
+   HELPSUBITEM IDM_HELPINDEX, IDM_HELPINDEX
+   HELPSUBITEM IDM_GENERALHELP, IDM_GENERALHELP
+   HELPSUBITEM IDM_USINGHELP, IDM_USINGHELP
+   HELPSUBITEM IDM_KEYSHELP, IDM_KEYSHELP
+   HELPSUBITEM IDM_ABOUT, IDM_ABOUT
+}
+
+
+//Menu
+MENU ID_RESOURCE
+    {
+    SUBMENU "~File",		IDM_FILE
+        {
+        MENUITEM "~New",		IDM_NEW
+        MENUITEM "~Open...\tCtrl+O",	IDM_OPEN
+        MENUITEM "~Import...\tCtrl+I",             IDM_IMPORT
+        MENUITEM "~Save\tF2",		IDM_SAVE
+        MENUITEM "Save ~as...",	IDM_SAVEAS
+        MENUITEM "Save and ~exit\tF4",   IDM_SAVEANDEXIT
+        MENUITEM SEPARATOR
+        MENUITEM "Selec~t printer...", IDM_CHOOSE_PRINTER
+        MENUITEM "Printer in~formation...",   IDM_PRINTER_INFO
+        MENUITEM "~Print...", IDM_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "Spawn ~ZED", IDM_SPAWNZED
+        MENUITEM "",IDM_SEP1,MIS_SEPARATOR
+        MENUITEM "~1",                    IDM_RECENTFILE1
+        MENUITEM "~2",                    IDM_RECENTFILE2
+        MENUITEM "~3",                    IDM_RECENTFILE3
+        MENUITEM "~4",                    IDM_RECENTFILE4
+        MENUITEM "~5",                    IDM_RECENTFILE5
+        MENUITEM "~6",                    IDM_RECENTFILE6
+        MENUITEM "~7",                    IDM_RECENTFILE7
+        MENUITEM "~8",                    IDM_RECENTFILE8
+        MENUITEM "~9",                    IDM_RECENTFILE9
+        MENUITEM "",IDM_SEP2,MIS_SEPARATOR
+        MENUITEM "E~xit\tF3",		IDM_EXIT
+        }
+    SUBMENU "~Edit",		IDM_EDIT
+	{
+	MENUITEM "~Undo\tCtrl+Z",		IDM_UNDO
+        MENUITEM SEPARATOR
+	MENUITEM "Cu~t\tCtrl+X", 		IDM_CUT
+	MENUITEM "~Copy\tCtrl+C",		IDM_COPY
+	MENUITEM "~Paste\tCtrl+V",		IDM_PASTE
+	MENUITEM "De~lete\tDel",		IDM_DELETE
+        MENUITEM SEPARATOR
+	MENUITEM "~Find...\tCtrl+F",		IDM_FIND
+        MENUITEM "Find ~next\tF5",              IDM_FINDNEXT
+        MENUITEM "~Replace...\tCtrl+R",         IDM_REPLACE
+	}
+    SUBMENU "~Settings",            IDM_SETTINGS
+        {
+        MENUITEM "~Auto-indent\tCtrl+A",   IDM_AUTOINDENT
+        MENUITEM "Cas~e-sensitive filenames\tCtrl+E", IDM_CASESENSITIVEFILENAMES
+        MENUITEM "~Status bar\tCtrl+S",   IDM_STATUSBAR
+        MENUITEM "~Word wrap\tCtrl+W",  IDM_SETWRAP    
+        MENUITEM SEPARATOR
+        MENUITEM "Auto-sa~ve...", IDM_AUTOSAVE
+        MENUITEM "~Color...",             IDM_COLOR
+        MENUITEM "~Font...",              IDM_FONT
+        MENUITEM "~Tabs...",    IDM_TABSETTINGS
+        MENUITEM SEPARATOR
+	MENUITEM "Save sett~ings",	      IDM_SAVESETTINGS
+        }
+
+    SUBMENU "~Help",    		IDM_HELP
+        {
+        MENUITEM "Help ~index...",  IDM_HELPINDEX
+        MENUITEM "~Contents...", IDM_HELPCONTENTS
+        MENUITEM "~General help...", IDM_GENERALHELP
+        MENUITEM "~Using help...", IDM_USINGHELP
+        MENUITEM "~Keys help...", IDM_KEYSHELP
+        MENUITEM SEPARATOR
+        MENUITEM "~Registration...", IDM_REGISTRATION
+        MENUITEM SEPARATOR
+        MENUITEM "~About...",  	IDM_ABOUT
+        }
+     }
+
+//Keyboard accelerators
+ACCELTABLE ID_RESOURCE
+        {
+        //File menu
+        "o",    IDM_OPEN,               CONTROL
+        "O",    IDM_OPEN,               CONTROL
+
+        "i", IDM_IMPORT,                CONTROL
+        "I", IDM_IMPORT,                CONTROL
+
+        VK_F2,  IDM_SAVE,               VIRTUALKEY
+        VK_F4,  IDM_SAVEANDEXIT,        VIRTUALKEY
+        VK_F3,  IDM_EXIT,               VIRTUALKEY
+
+
+        //Edit menu
+        "z",    IDM_UNDO,               CONTROL
+        "Z",    IDM_UNDO,               CONTROL
+
+        "x",    IDM_CUT,                CONTROL
+        "X",    IDM_CUT,                CONTROL
+
+        "c",    IDM_COPY,               CONTROL
+        "C",    IDM_COPY,               CONTROL
+
+        "v",    IDM_PASTE,              CONTROL
+        "V",    IDM_PASTE,              CONTROL
+
+        //Find
+        "f",    IDM_FIND,               CONTROL
+        "F",    IDM_FIND,               CONTROL
+        
+        //Find next
+        VK_F5,  IDM_FINDNEXT,           VIRTUALKEY
+
+        //Replace
+        "r",    IDM_REPLACE,            CONTROL
+        "R",    IDM_REPLACE,            CONTROL
+
+        //Settings menu
+        //AutoIndent
+        "a",    IDM_AUTOINDENT,    CONTROL
+        "A",    IDM_AUTOINDENT,    CONTROL        
+
+        "e",    IDM_CASESENSITIVEFILENAMES, CONTROL
+        "E",    IDM_CASESENSITIVEFILENAMES, CONTROL
+
+        "s",    IDM_STATUSBAR, CONTROL
+        "S",    IDM_STATUSBAR, CONTROL
+
+        "w",    IDM_SETWRAP,        CONTROL
+        "W",    IDM_SETWRAP,        CONTROL
+
+        }
+
+
+//About Dialog
+rcinclude about2.dlg
+
+//Find dialog
+rcinclude find.dlg
+
+//Replace dialog
+rcinclude replace.dlg
+
+//Verify dialog
+rcinclude verify.dlg
+
+//Tab settings dialog
+rcinclude tab.dlg
+
+//AutoSave dialog
+rcinclude autosave.dlg
+
+//Color change dialog
+rcinclude colorchg.dlg
+
+
+//For Printing
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+
+    ID_NOQUEUE_ERROR      "No Printers have been installed."
+    ID_PRIORITY_HIGH      "High"
+    ID_PRIORITY_DEF       "Default"
+    ID_PRIORITY_MIN       "Low"
+    ID_STATUS_HELD        "Held"
+    ID_STATUS_PEND        "Pending Deletion"
+    ID_STATUS_NORM        "Released"
+    ID_CAPS_CURRENT       "Current"
+    ID_CAPS_SELECTABLE    "Selectable"
+    ID_CAPS_NONE          "No Attribute Set"
+    ID_TECH_UNKNOWN       "Unknown"
+    ID_TECH_PLOTTER       "Vector Plotter"
+    ID_TECH_RAST_DISP     "Raster Display" 
+    ID_TECH_RAST_PRT      "Raster Printer"
+    ID_TECH_RAST_CAM      "Raster Camera"
+    ID_TECH_POSTSCRIPT    "PostScript Device"
+    ID_ERR_NODEF_PRINTERS "A printer has not been installed, or all printers have been deleted."
+    ID_ERR_FAIL_DEV_QUERY "A call to SplQueryDevice has failed"
+    IDM_CHOOSE_PRINTER    "Change the current printer"
+    IDM_PRINT             "Print to "
+    IDM_PRINT_THREAD      "Print in a separate thread to "
+    IDM_ABOUT             "Product information"
+    IDM_DISP_BLANK        "Display an empty page"
+//    IDM_DISP_BOX          "Display a filled rectangle scaled to the page"
+//    IDM_DISP_ELLIPSE      "Display a filled ellipse scaled to the page"
+//    IDM_DISP_X            "Display the ..."
+    IDM_PRINTER_INFO      "Show information on all printers"
+    ID_INSTALLDATE        "TSNT          "
+   
+END
+
+

@@ -1,0 +1,60 @@
+/////////////////////////////////////////////////
+
+ZED.ZIP should be placed in /os2/32bit/editors
+
+Program Description:
+
+ZED is a very fast, fully functional 32 bit text editor for OS/2.
+
+
+Features:
+
+-Spawning
+-File import
+-Printing
+-Recent file list
+-Save and exit
+-Undo
+-Find
+-Find next
+-Replace
+-AutoIndent
+-Case sensitive filenames (for HPFS users.)
+-Word wrap
+-AutoSave:
+    -Auto-file name
+    -Save per modification
+    -Save per time period
+-Customizable colors and fonts
+-Extensive online help
+-Status bar:
+    -Current line and column
+    -Key status
+    -File status
+    -Time
+
+
+ZED is shareware.
+
+ZED runs in OS/2's Presentation Manger.
+
+ZED's goal is to provide an editor for OS/2 that is easier to use 
+and more functional than those supplied with the system. 
+
+ZED is small, loads fast, and powerful.
+
+ZED is what E should have been.
+
+
+
+Who wrote ZED?
+I did. 
+Edwin Bruce Shankle III
+ivisoft@cybernetics.net
+Bruce_Shankle@msn.com
+
+Please see the online help or README.TXT file that
+comes with ZED.ZIP for more information.
+/////////////////////////////////////////////////
+
+

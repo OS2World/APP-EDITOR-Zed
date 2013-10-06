@@ -1,0 +1,16 @@
+
+
+DLGTEMPLATE IDD_GETDIR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED - Install", IDD_GETDIR, 100, 75, 226, 63, WS_VISIBLE, FCF_SYSMENU | 
+            FCF_TITLEBAR
+    BEGIN
+        LTEXT           "ZED will be installed in the following directory:", 
+                        101, 11, 45, 206, 8
+                        //PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+        ENTRYFIELD      "", TXT_DIR, 13, 28, 201, 8, ES_MARGIN
+                        PRESPARAMS PP_BACKGROUNDCOLOR, 0x00FFFFFFL
+        DEFPUSHBUTTON   "~OK", IDB_DIR_OK, 5, 6, 40, 14
+        PUSHBUTTON      "~Cancel", IDB_DIR_CANCEL, 48, 6, 40, 14
+    END
+END

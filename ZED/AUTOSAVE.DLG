@@ -1,0 +1,32 @@
+#ifndef MAINRESOURCE
+DLGINCLUDE 1 "autosave.h"
+#endif
+
+DLGTEMPLATE IDD_AUTOSAVE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED AutoSave", IDD_AUTOSAVE, 64, 105, 272, 53, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        AUTOCHECKBOX    "~1 Automatic save every", ID_CHK_AUTOSAVEMINUTES, 4, 
+                        36, 118, 10, WS_GROUP
+        CONTROL         "", ID_SPIN_AUTOSAVEMINUTES, 120, 35, 36, 12, 
+                        WC_SPINBUTTON, SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | 
+                        SPBS_MASTER | SPBS_SERVANT | SPBS_JUSTDEFAULT | 
+                        WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "~2 Automatic save every", 
+                        ID_CHK_AUTOSAVEMODIFICATIONS, 4, 23, 118, 10
+        CONTROL         "", ID_SPIN_AUTOSAVEMODIFICATIONS, 119, 23, 37, 12, 
+                        WC_SPINBUTTON, SPBS_ALLCHARACTERS | SPBS_NUMERICONLY | 
+                        SPBS_MASTER | SPBS_SERVANT | SPBS_JUSTDEFAULT | 
+                        WS_TABSTOP | WS_VISIBLE
+        AUTOCHECKBOX    "~3 Prompt for name if untitled", 
+                        ID_CHK_AUTOSAVEPROMPTFORNAME, 4, 10, 164, 10
+        DEFPUSHBUTTON   "~OK", IDB_AUTOSAVEOK, 223, 35, 40, 14
+        PUSHBUTTON      "~Cancel", IDB_AUTOSAVECANCEL, 223, 17, 40, 14
+        PUSHBUTTON      "~Help", IDB_AUTOSAVEHELP, 223, 1, 40, 14
+        LTEXT           "minutes", 114, 159, 36, 49, 8, NOT WS_GROUP
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+        LTEXT           "modifications", 115, 159, 23, 62, 8, NOT WS_GROUP
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    END
+END

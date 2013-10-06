@@ -1,0 +1,8 @@
+///////////////////////////////////////////////
+//SPAWNZED.H
+//
+//Header file for SPAWNZED.C
+
+
+//Function decls.
+int SpawnProc(void);

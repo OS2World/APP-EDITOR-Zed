@@ -1,0 +1,16 @@
+#ifndef MAINRESOURCE
+DLGINCLUDE 1 "D:\PROGS\OS2\BEDIT\about2.h"
+#endif
+
+DLGTEMPLATE IDD_ABOUT2 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED About", IDD_ABOUT2, 85, 66, 234, 70, FS_SCREENALIGN | WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        ICON            ID_RESOURCE, -1, 9, 42, 21, 16, WS_GROUP
+        LTEXT           "ZED text editor.", 102, 51, 47, 92, 8
+        LTEXT           "Version 1.1s", 103, 51, 38, 99, 8
+        LTEXT           "Copyright (C) 1995, Bruce Shankle", 104, 51, 23, 153, 8
+        DEFPUSHBUTTON   "OK", IDB_ABOUT_OK, 188, 52, 40, 14
+    END
+END

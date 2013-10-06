@@ -1,0 +1,15 @@
+//DLGINCLUDE 1 "rm.h"
+
+DLGTEMPLATE IDD_README LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED - README.TXT", IDD_README, 19, 20, 400, 167, WS_VISIBLE, 
+            FCF_TITLEBAR | FCF_NOBYTEALIGN
+    BEGIN
+        MLE             "", ID_RM_MLE, 3, 32, 392, 133, MLS_READONLY | 
+                        MLS_WORDWRAP | MLS_HSCROLL | MLS_VSCROLL | WS_GROUP
+        PUSHBUTTON      "~I have read and fully understand the ZED shareware "
+                        "agreement.", IDB_RM_IUNDERSTAND, 63, 17, 277, 12
+        DEFPUSHBUTTON   "~Cancel Installation", IDB_RM_CANCELINSTALL, 63, 4, 
+                        277, 11
+    END
+END

@@ -1,0 +1,508 @@
+#line 0 "zed.rc"
+
+
+
+
+#line 5 "zed.rc"
+#line 6 "zed.rc"
+#line 7 "zed.rc"
+#line 8 "zed.rc"
+#line 9 "zed.rc"
+#line 10 "zed.rc"
+#line 11 "zed.rc"
+#line 12 "zed.rc"
+#line 13 "zed.rc"
+
+
+#line 16 "zed.rc"
+#line 17 "zed.rc"
+#line 0 "PRNT.DLG"
+
+
+
+
+
+
+
+
+DLGINCLUDE 1 "DIALOG.H"
+
+DLGTEMPLATE 36 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Printer Select", 36, 65, 89, 253, 69, 
+            0x80000000L, 0x00000002L | 0x00000001L
+            PRESPARAMS 15L, "8.Helv"
+    BEGIN
+        LISTBOX         40, 5, 23, 241, 40
+        DEFPUSHBUTTON   "~Ok", 1, 4, 3, 40, 14
+        PUSHBUTTON      "Cancel", 2, 56, 3, 40, 14
+        PUSHBUTTON      "Job Properties...", 67, 107, 3, 84, 14
+    END
+END
+
+DLGTEMPLATE 37 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Print", 37, 72, 106, 250, 66, 0x80000000L, 0x00000002L | 
+            0x00000001L
+            PRESPARAMS 15L, "8.Helv"
+    BEGIN
+        LTEXT           "Printer:", -1, 7, 52, 37, 8
+        ENTRYFIELD      "", 69, 48, 54, 196, 8, 0x00000008L
+        LTEXT           "Document:", 106, 6, 37, 49, 8
+        ENTRYFIELD      "", 70, 48, 39, 195, 8, 0x00000008L
+        LTEXT           "Copies:", -1, 7, 24, 33, 8
+        CONTROL         "", 71, 47, 24, 30, 12, ((PSZ)0xffff0020L), 
+                        0x00000000L | 0x00000010L | 0x00000000L | 
+                        0x00000000L | 0x00000100L | 0x00010000L | 
+                        0x00020000L | 0x80000000L
+        LTEXT           "Priority:", -1, 89, 24, 27, 8
+        CONTROL         "", 41, 120, 24, 52, 12, ((PSZ)0xffff0020L), 
+                        0x00000000L | 0x00000002L | 0x00000010L | 
+                        0x00000000L | 0x00000000L | 0x00000008L | 
+                        0x00000100L | 0x00010000L | 0x00020000L | 0x80000000L
+        DEFPUSHBUTTON   "Ok", 1, 14, 4, 40, 14
+        PUSHBUTTON      "Cancel", 2, 63, 4, 40, 14
+    END
+END
+
+DLGTEMPLATE 38 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Print Status", 38, 94, 153, 240, 61, 0x80000000L, 
+            0x00000002L | 0x00000001L
+            PRESPARAMS 15L, "8.Helv"
+    BEGIN
+        LTEXT           "Job:", -1, 5, 48, 31, 8
+        LTEXT           "", 73, 42, 48, 184, 8
+        LTEXT           "Printer:", -1, 5, 36, 31, 8
+        LTEXT           "", 69, 42, 37, 184, 8
+        LTEXT           "Status:", -1, 5, 24, 31, 8
+        LTEXT           "", 42, 42, 25, 184, 8
+        PUSHBUTTON      "Cancel", 2, 92, 4, 40, 14
+        DEFPUSHBUTTON   "Ok", 1, 91, 4, 40, 14
+    END
+END
+
+DLGTEMPLATE 35 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Printer Information", 35, 25, 42, 378, 160, 
+            0x80000000L, 0x00000002L | 0x00000001L
+            PRESPARAMS 15L, "8.Helv"
+    BEGIN
+        LISTBOX         40, 6, 117, 181, 36
+        LTEXT           "Queue Description", -1, 8, 151, 90, 8
+        GROUPBOX        "Queue", 36, 6, 55, 182, 59
+        LTEXT           "Queue Name:", -1, 11, 98, 45, 8
+        LTEXT           "", 74, 61, 98, 111, 8
+        LTEXT           "Default Device:", -1, 11, 88, 50, 8
+        LTEXT           "", 46, 61, 88, 121, 8
+        LTEXT           "Print Devices:", -1, 11, 78, 48, 8
+        LTEXT           "", 47, 61, 78, 121, 8
+        LTEXT           "Priority:", -1, 11, 68, 26, 8
+        LTEXT           "", 41, 38, 68, 24, 8
+        LTEXT           "Status:", -1, 70, 68, 25, 8
+        LTEXT           "", 42, 98, 68, 30, 8
+        LTEXT           "Start Time:", -1, 11, 58, 39, 8
+        LTEXT           "", 44, 52, 58, 29, 8
+        LTEXT           "End Time:", -1, 98, 58, 38, 8
+        LTEXT           "", 45, 142, 58, 32, 8
+        LTEXT           "Jobs:", -1, 138, 68, 20, 8
+        LTEXT           "", 43, 162, 68, 20, 8
+        LISTBOX         49, 197, 117, 173, 34
+        LTEXT           "Forms", -1, 198, 151, 27, 8
+        GROUPBOX        "Form Information", -1, 196, 55, 175, 59
+        LTEXT           "Width in MM:", -1, 204, 96, 44, 8
+        LTEXT           "", 50, 257, 96, 18, 8
+        LTEXT           "Height in MM:", -1, 285, 96, 47, 8
+        LTEXT           "", 51, 338, 96, 18, 8
+        LTEXT           "Left Clip:", -1, 204, 76, 29, 8
+        LTEXT           "", 52, 241, 76, 20, 8
+        LTEXT           "Bottom Clip:", -1, 273, 76, 38, 8
+        LTEXT           "", 53, 320, 76, 20, 8
+        LTEXT           "Attribute:", 38, 204, 86, 30, 8
+        LTEXT           "", 54, 238, 86, 87, 8
+        LTEXT           "Right Clip:", -1, 204, 66, 32, 8
+        LTEXT           "", 55, 241, 66, 20, 8
+        LTEXT           "Top Clip:", -1, 272, 66, 37, 8
+        LTEXT           "", 56, 320, 66, 20, 8
+        GROUPBOX        "Device Capabilites", -1, 5, 22, 367, 30
+        LTEXT           "Technology:", -1, 11, 35, 40, 8
+        LTEXT           "", 48, 51, 35, 72, 8
+        LTEXT           "Width in Pels:", -1, 126, 35, 43, 8
+        LTEXT           "", 57, 170, 35, 19, 8
+        LTEXT           "Height in Pels:", 37, 194, 35, 47, 8
+        LTEXT           "", 58, 239, 35, 20, 8
+        LTEXT           "Horiz Res:", 106, 260, 35, 33, 8
+        LTEXT           "", 59, 293, 35, 20, 8
+        LTEXT           "Vert Res:", -1, 316, 35, 30, 8
+        LTEXT           "", 60, 348, 35, 20, 8
+        LTEXT           "GpiBitBlt:", -1, 11, 25, 32, 8
+        LTEXT           "", 61, 44, 25, 20, 8
+        LTEXT           "Banding:", -1, 67, 25, 31, 8
+        LTEXT           "", 62, 97, 25, 20, 8
+        LTEXT           "GpiSetPel:", -1, 123, 25, 35, 8
+        LTEXT           "", 63, 158, 25, 20, 8
+        LTEXT           "Raster Fonts:", -1, 184, 25, 44, 8
+        LTEXT           "", 64, 228, 25, 20, 8
+        LTEXT           "Kerning:", -1, 256, 25, 29, 8
+        LTEXT           "", 65, 286, 25, 20, 8
+        LTEXT           "Palette:", -1, 318, 25, 28, 8
+        LTEXT           "", 66, 347, 25, 20, 8
+        DEFPUSHBUTTON   "Ok", 1, 6, 3, 40, 14
+        PUSHBUTTON      "Cancel", 2, 55, 3, 40, 14
+        PUSHBUTTON      "Job Properties...", 67, 106, 3, 68, 14
+        PUSHBUTTON      "Update", 68, 184, 3, 40, 14
+    END
+END
+#line 18 "zed.rc"
+
+
+
+ICON  500  zed.ico
+
+
+
+HELPTABLE 655
+{
+HELPITEM 500, 656, 657
+}
+
+HELPSUBTABLE 656
+{
+HELPSUBITEM 650, 650
+HELPSUBITEM 651, 651
+HELPSUBITEM 652, 652
+HELPSUBITEM 653, 653
+HELPSUBITEM 608, 608
+}
+
+
+
+MENU 500
+{
+SUBMENU "~File",		600
+{
+MENUITEM "~New",		606
+MENUITEM "~Open...\tCtrl+O",	605
+MENUITEM "~Import...\tCtrl+I",             659
+MENUITEM "~Save\tF2",		602
+MENUITEM "Save ~as...",	603
+MENUITEM "Save and exit\tF4",   604
+MENUITEM SEPARATOR
+MENUITEM "Selec~t printer...", 21
+MENUITEM "Printer ~information...",   28
+MENUITEM "~Print...", 22
+MENUITEM SEPARATOR
+MENUITEM "Spawn ~ZED", 633
+MENUITEM "",629,0x0004
+MENUITEM "~1",                    625
+MENUITEM "~2",                    626
+MENUITEM "~3",                    627
+MENUITEM "~4",                    628
+MENUITEM "~5",                    645
+MENUITEM "~6",                    646
+MENUITEM "~7",                    647
+MENUITEM "~8",                    648
+MENUITEM "~9",                    649
+MENUITEM "",630,0x0004
+MENUITEM "E~xit\tF3",		601
+}
+SUBMENU "~Edit",		609
+{
+MENUITEM "~Undo\tCtrl+Z",		614
+MENUITEM SEPARATOR
+MENUITEM "Cu~t\tCtrl+X", 		610
+MENUITEM "~Copy\tCtrl+C",		611
+MENUITEM "~Paste\tCtrl+V",		612
+MENUITEM "De~lete\tDel",		613
+MENUITEM SEPARATOR
+MENUITEM "~Find...\tCtrl+F",		615
+MENUITEM "Find ~next\tF5",              616
+MENUITEM "~Replace...\tCtrl+R",         617
+}
+SUBMENU "~Settings",            618
+{
+MENUITEM "~Auto-indent\tCtrl+A",   631
+MENUITEM "Cas~e-sensitive filenames\tCtrl+E", 644
+MENUITEM "~Status bar\tCtrl+S",   621
+MENUITEM "~Word wrap\tCtrl+W",  620    
+MENUITEM SEPARATOR
+MENUITEM "Auto-sa~ve...", 632
+MENUITEM "~Color...",             623
+MENUITEM "~Font...",              622
+MENUITEM "~Tabs...",    619
+MENUITEM SEPARATOR
+MENUITEM "~Save settings",	      624
+}
+
+SUBMENU "~Help",    		607
+{
+MENUITEM "Help ~index...",  650
+MENUITEM "Contents...", 654
+MENUITEM "~General help...", 651
+MENUITEM "~Using help...", 652
+MENUITEM "~Keys help...", 653
+MENUITEM SEPARATOR
+MENUITEM "~Registration..." 660
+MENUITEM SEPARATOR
+MENUITEM "~About...",  	608
+}
+}
+
+
+ACCELTABLE 500
+{
+
+"o",    605,               CONTROL
+"O",    605,               CONTROL
+
+"i", 659,                CONTROL
+"I", 659,                CONTROL
+
+0x21,  602,               VIRTUALKEY
+0x23,  604,        VIRTUALKEY
+0x22,  601,               VIRTUALKEY
+
+
+
+"z",    614,               CONTROL
+"Z",    614,               CONTROL
+
+"x",    610,                CONTROL
+"X",    610,                CONTROL
+
+"c",    611,               CONTROL
+"C",    611,               CONTROL
+
+"v",    612,              CONTROL
+"V",    612,              CONTROL
+
+
+"f",    615,               CONTROL
+"F",    615,               CONTROL
+
+
+0x24,  616,           VIRTUALKEY
+
+
+"r",    617,            CONTROL
+"R",    617,            CONTROL
+
+
+
+"a",    631,    CONTROL
+"A",    631,    CONTROL        
+
+"e",    644, CONTROL
+"E",    644, CONTROL
+
+"s",    621, CONTROL
+"S",    621, CONTROL
+
+"w",    620,        CONTROL
+"W",    620,        CONTROL
+
+}
+
+
+
+#line 0 "about2.dlg"
+
+
+
+
+DLGTEMPLATE 201 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED About", 201, 85, 66, 234, 70, 0x00000200L | 0x80000000L, 
+            0x00000002L | 0x00000001L
+    BEGIN
+        ICON            500, -1, 9, 42, 21, 16, 0x00010000L
+        LTEXT           "ZED text editor.", 102, 51, 47, 92, 8
+        LTEXT           "Version 1.0s", 103, 51, 38, 99, 8
+        LTEXT           "Copyright (C) 1995, Bruce Shankle", 104, 51, 23, 153, 8
+        DEFPUSHBUTTON   "OK", 200, 188, 52, 40, 14
+    END
+END
+#line 170 "zed.rc"
+
+
+#line 0 "find.dlg"
+
+
+
+
+DLGTEMPLATE 300 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Find", 300, 73, 78, 240, 41, 0x80000000L, 0x00000002L | 
+            0x00000001L
+    BEGIN
+        ENTRYFIELD      "", 304, 12, 19, 171, 8, 0x00000008L
+        AUTOCHECKBOX    "Case ~Sensitive", 301, 10, 5, 105, 10
+        DEFPUSHBUTTON      "~OK", 303, 193, 23, 41, 14
+        PUSHBUTTON      "~Cancel", 302, 193, 5, 41, 14
+        LTEXT           "Find what:", 305, 10, 29, 46, 8
+    END
+END
+#line 173 "zed.rc"
+
+
+#line 0 "replace.dlg"
+
+
+
+
+DLGTEMPLATE 400 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Replace", 400, 69, 59, 257, 59, 0x00000040L| 0x00000200L | 
+            0x80000000L, 0x00000002L | 0x00000001L 
+    BEGIN
+        ENTRYFIELD      "", 402, 69, 47, 114, 8, 0x00000008L | 
+                        0x00010000L
+        ENTRYFIELD      "", 405, 69, 33, 114, 8, 0x00000008L
+        AUTOCHECKBOX    "Case ~sensitive", 409, 67, 18, 
+                        75, 10
+        DEFPUSHBUTTON      "~Verify", 408, 193, 42, 56, 14
+        PUSHBUTTON      "Rep~lace All", 404, 193, 24, 56, 14
+        PUSHBUTTON      "Cancel", 407, 193, 6, 56, 14, 
+                        0x00010000L
+        RTEXT           "Replace with:", 506, 5, 31, 58, 8, NOT 0x00010000L
+        RTEXT           "Find what:", 501, 13, 45, 50, 8, NOT 0x00010000L
+    END
+END
+#line 176 "zed.rc"
+
+
+#line 0 "verify.dlg"
+
+
+
+
+DLGTEMPLATE 700 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Verify", 700, 140, 90, 131, 33, 0x00000040L | 
+            0x00000200L | 0x80000000L, 0x00000002L | 0x00000001L
+    BEGIN
+        CTEXT           "Replace selected text?", 901, 9, 20, 108, 8
+        PUSHBUTTON      "~Yes", 702, 2, 5, 40, 14
+        PUSHBUTTON      "~No", 703, 45, 5, 40, 14
+        DEFPUSHBUTTON   "~Cancel", 704, 88, 5, 40, 14
+    END
+END
+#line 179 "zed.rc"
+
+
+#line 0 "tab.dlg"
+
+
+
+
+DLGTEMPLATE 800 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Tabs", 800, 131, 55, 163, 62, 0x00000040L | 
+            0x00000200L | 0x80000000L, 0x00000002L | 0x00000001L
+    BEGIN
+        AUTORADIOBUTTON "~Spaces", 802, 14, 46, 44, 10, 0x00010000L | 
+                        0x00020000L
+        CONTROL         "", 801, 63, 46, 36, 12, ((PSZ)0xffff0020L), 
+                        0x00000000L | 0x00000001L | 0x00000010L | 
+                        0x00000000L | 0x00000000L | 0x00000004L | 
+                        0x00020000L | 0x80000000L
+        AUTORADIOBUTTON "~Tab character", 805, 14, 29, 68, 10, 
+                        0x00020000L
+        DEFPUSHBUTTON   "~OK", 803, 117, 44, 40, 14
+        PUSHBUTTON      "~Cancel", 804, 117, 26, 40, 14
+        PUSHBUTTON      "~Help", 806, 117, 8, 40, 14
+    END
+END
+#line 182 "zed.rc"
+
+
+#line 0 "autosave.dlg"
+
+
+
+
+DLGTEMPLATE 850 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED AutoSave", 850, 64, 105, 272, 53, 0x80000000L, 
+            0x00000002L | 0x00000001L
+    BEGIN
+        AUTOCHECKBOX    "~1 Automatic save every", 851, 4, 
+                        36, 118, 10, 0x00010000L
+        CONTROL         "", 852, 120, 35, 36, 12, 
+                        ((PSZ)0xffff0020L), 0x00000000L | 0x00000001L | 
+                        0x00000010L | 0x00000000L | 0x00000000L | 
+                        0x00020000L | 0x80000000L
+        AUTOCHECKBOX    "~2 Automatic save every", 
+                        853, 4, 23, 118, 10
+        CONTROL         "", 854, 119, 23, 37, 12, 
+                        ((PSZ)0xffff0020L), 0x00000000L | 0x00000001L | 
+                        0x00000010L | 0x00000000L | 0x00000000L | 
+                        0x00020000L | 0x80000000L
+        AUTOCHECKBOX    "~3 Prompt for name if untitled", 
+                        855, 4, 10, 164, 10
+        DEFPUSHBUTTON   "~OK", 856, 223, 35, 40, 14
+        PUSHBUTTON      "~Cancel", 857, 223, 17, 40, 14
+        PUSHBUTTON      "~Help", 858, 223, 1, 40, 14
+        LTEXT           "minutes", 114, 159, 36, 49, 8, NOT 0x00010000L
+                        PRESPARAMS 1L, 0x00000000L
+        LTEXT           "modifications", 115, 159, 23, 62, 8, NOT 0x00010000L
+                        PRESPARAMS 1L, 0x00000000L
+    END
+END
+#line 185 "zed.rc"
+
+
+#line 0 "colorchg.dlg"
+
+
+
+
+DLGTEMPLATE 858 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Color Change", 858, 120, 108, 206, 36, 
+            0x00000040L | 0x80000000L, 0x00000001L
+    BEGIN
+        CTEXT           "Apply color to text or background?", 101, 9, 22, 187, 8
+        PUSHBUTTON      "~Text", 859, 6, 4, 40, 14
+        PUSHBUTTON      "~Background", 860, 49, 4, 62, 14
+        PUSHBUTTON      "~Help", 861, 114, 4, 40, 14
+        DEFPUSHBUTTON      "~Cancel", 862, 157, 4, 40, 14
+    END
+END
+#line 188 "zed.rc"
+
+
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+
+2      "No Printers have been installed."
+3      "High"
+4       "Default"
+5       "Low"
+6        "Held"
+7        "Pending Deletion"
+8        "Released"
+9       "Current"
+10    "Selectable"
+11          "No Attribute Set"
+12       "Unknown"
+12 + 1       "Vector Plotter"
+12 + 2     "Raster Display" 
+12 + 3      "Raster Printer"
+12 + 4      "Raster Camera"
+12 + 5    "PostScript Device"
+18 "A printer has not been installed, or all printers have been deleted."
+19 "A call to SplQueryDevice has failed"
+21    "Change the current printer"
+22             "Print to "
+20      "Print in a separate thread to "
+608             "Product information"
+24        "Display an empty page"
+25          "Display a filled rectangle scaled to the page"
+26      "Display a filled ellipse scaled to the page"
+27            "Display the ..."
+28      "Show information on all printers"
+END
+
+

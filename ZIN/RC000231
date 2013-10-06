@@ -1,0 +1,93 @@
+#line 0 "zin.rc"
+
+
+
+
+
+
+
+
+#line 9 "zin.rc"
+#line 10 "zin.rc"
+#line 11 "zin.rc"
+#line 12 "zin.rc"
+
+
+ICON  500  zin.ico
+
+
+#line 0 "status.dlg"
+
+DLGTEMPLATE 3000 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED - Install", 3000, 86, 75, 254, 59, NOT 0x00000080L | 
+            0x00000100L | 0x80000000L, 0x00000001L | 0x00001000L
+    BEGIN
+        CTEXT           "Checking files...", 3001, 3, 27, 244, 8
+    END
+END
+
+#line 18 "zin.rc"
+
+
+#line 0 "getdir.dlg"
+
+
+DLGTEMPLATE 504 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED - Install", 504, 100, 75, 226, 63, 0x80000000L, 0x00000002L | 
+            0x00000001L
+    BEGIN
+        LTEXT           "ZED will be installed in the following directory:", 
+                        101, 11, 45, 206, 8
+                        
+        ENTRYFIELD      "", 501, 13, 28, 201, 8, 0x00000008L
+                        PRESPARAMS 3L, 0x00FFFFFFL
+        DEFPUSHBUTTON   "~OK", 502, 5, 6, 40, 14
+        PUSHBUTTON      "~Cancel", 503, 48, 6, 40, 14
+    END
+END
+#line 21 "zin.rc"
+
+
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+1000     "ZED - Install"
+1001    "This program prepares ZED 1.0s to run on your computer."
+1002 "C:\\ZED"
+1003 "The installation has been cancelled."
+1004 "The specified directory does not exist. Create it?"
+1005 "The specified directory could not be created."
+
+1006    "Checking ZED.EXE..."
+1007    "Checking ZED.HLP..."
+1008    "Checking ZED.ICO..."    
+1009 "Checking README.TXT..."
+1010 "Checking REGISTER.TXT..."
+
+1018    "Installing ZED.EXE..."
+1019    "Installing ZED.HLP..."
+1020    "Installing ZED.ICO..."    
+1021 "Installing README.TXT..."
+1022 "Installing REGISTER.TXT..."
+
+
+1011 "ZED.EXE"
+1012 "ZED.HLP"
+1013 "ZED.ICO"
+1014 "README.TXT"
+1015 "REGISTER.TXT"
+
+1016 "One of the files needed to install ZED is missing. Installation will end."
+1017 "A file could not be copied to the destination directory. Installation will end."
+
+1023 "A ZED object could not be created on your desktop. You must do this manually."
+1024 "ZED 1.0s successfully installed!"
+1024 "Creating Desktop ZED object..."
+
+
+
+END
+
+

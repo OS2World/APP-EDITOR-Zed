@@ -1,0 +1,48 @@
+/////////////////////////////////////////////////////////////////////
+IMPORTANT LAST-MINUTE NOTES:
+
+This is the tentative shareware release of ZED.
+Don't give it to anyone yet. I'm awaiting you're review of
+ZED 1.0s before I give the go-ahead to distribute it.
+
+To repeat:
+
+
+
+!!!! DO NOT DISTRIBUTE ZED UNTIL I SAY YOU CAN !!!!!!
+
+
+
+ZED alpha tester documentation
+Updated: 03/29/1995    by Bruce Shankle
+
+ZED LICENSE AGREEMENT:
+Although I have made every effort to insure that ZED is a stable program,
+I can not be held responsible for any damage ZED.EXE may cause to you, 
+your data, or your computer.  ZED is owned by Bruce Shankle.  You may 
+not make copies for any other purpose than backup without my express 
+written or emailed permission.
+IF YOU DO NOT ACCEPT THE ABOVE TERMS, THEN YOU MAY NOT
+USE ZED. BY USING ZED, YOU ARE AGREEING TO THE ABOVE TERMS.
+
+I have sent you ZED_10S.EXE.
+This file is a self extracting archive that contains the shareware
+release ZED.EXE 1.0s.
+
+Decoding ZED_10S.EXE:
+1. Save the email message a text file called ZED_10S.TXT.
+2. Then enter "uudecode ZED_10S.TXT" at the prompt.
+   This will create ZED_10S.EXE.
+3. Download ZED_10S.EXE to your local machine.
+
+3.5 BACK UP YOUR CURRENT COPY OF ZED.EXE AND ZED.INI IN CASE
+    THE NEW VERSION OF ZED HAS PROBLEMS
+
+4. Run ZED_10S.EXE (This is a DOS program)
+5. ZED_10S.EXE creates :
+    ZED.EXE -   Shareware version 1.0s
+    ZED.ICO -    ZED Icon
+    ZED.HLP -    ZED Online documenatation
+    README.TXT - Last minute info and copyright notice.
+
+/////////////////////////////////////////////////////////////////////

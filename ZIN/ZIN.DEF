@@ -1,0 +1,11 @@
+;///////////////////////////////////////////////////////////
+;// ZIN.DEF
+;// DEF file for ZIN installation program.
+;//
+;// History:
+;//    Created:    04/09/95    1.0    Bruce Shankle
+;///////////////////////////////////////////////////////////
+
+NAME ZIN WINDOWAPI
+DESCRIPTION 'ZIN Installer'
+PROTMODE

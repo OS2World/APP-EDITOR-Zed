@@ -1,0 +1,211 @@
+!define BLANK ""
+d:\progs\os2\zed\about.obj : d:\progs\os2\zed\about.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 about.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otexa&
+n -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\autondnt.obj : d:\progs\os2\zed\autondnt.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 autondnt.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\autosave.obj : d:\progs\os2\zed\autosave.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 autosave.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\colorchg.obj : d:\progs\os2\zed\colorchg.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 colorchg.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\easyfont.obj : d:\progs\os2\zed\easyfont.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 easyfont.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\errormsg.obj : d:\progs\os2\zed\errormsg.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 errormsg.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\filenew.obj : d:\progs\os2\zed\filenew.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 filenew.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ote&
+xan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\fileopen.obj : d:\progs\os2\zed\fileopen.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 fileopen.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\filesave.obj : d:\progs\os2\zed\filesave.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 filesave.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\filesvas.obj : d:\progs\os2\zed\filesvas.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 filesvas.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\find.obj : d:\progs\os2\zed\find.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 find.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otexan&
+ -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\findnext.obj : d:\progs\os2\zed\findnext.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 findnext.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\help.obj : d:\progs\os2\zed\help.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 help.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otexan&
+ -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\import.obj : d:\progs\os2\zed\import.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 import.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otex&
+an -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\ini.obj : d:\progs\os2\zed\ini.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 ini.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otexan &
+-of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\mleproc.obj : d:\progs\os2\zed\mleproc.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 mleproc.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ote&
+xan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\palette.obj : d:\progs\os2\zed\palette.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 palette.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ote&
+xan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\prnt.obj : d:\progs\os2\zed\prnt.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 prnt.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otexan&
+ -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\prntinfo.obj : d:\progs\os2\zed\prntinfo.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 prntinfo.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\rcntfile.obj : d:\progs\os2\zed\rcntfile.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 rcntfile.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\readfile.obj : d:\progs\os2\zed\readfile.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 readfile.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\replace.obj : d:\progs\os2\zed\replace.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 replace.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ote&
+xan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\savefile.obj : d:\progs\os2\zed\savefile.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 savefile.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\spawnzed.obj : d:\progs\os2\zed\spawnzed.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 spawnzed.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -ot&
+exan -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\status.obj : d:\progs\os2\zed\status.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 status.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otex&
+an -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\tab.obj : d:\progs\os2\zed\tab.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 tab.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otexan &
+-of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\verify.obj : d:\progs\os2\zed\verify.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 verify.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otex&
+an -of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\zed.obj : d:\progs\os2\zed\zed.c .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ *wcc386 zed.c -i=C:\WATCOM\h;C:\WATCOM\h\os2 -w4 -e25 -sg -zp4 -zq -otexan &
+-of -bm -mf -3r -bt=os2
+
+d:\progs\os2\zed\zed.res : d:\progs\os2\zed\zed.rc .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ rc -i $[: -i C:\WATCOM\h -i C:\WATCOM\h\os2 -r zed.rc zed.res
+
+d:\progs\os2\zed\zed.exe : d:\progs\os2\zed\about.obj d:\progs\os2\zed\auton&
+dnt.obj d:\progs\os2\zed\autosave.obj d:\progs\os2\zed\colorchg.obj d:\progs&
+\os2\zed\easyfont.obj d:\progs\os2\zed\errormsg.obj d:\progs\os2\zed\filenew&
+.obj d:\progs\os2\zed\fileopen.obj d:\progs\os2\zed\filesave.obj d:\progs\os&
+2\zed\filesvas.obj d:\progs\os2\zed\find.obj d:\progs\os2\zed\findnext.obj d&
+:\progs\os2\zed\help.obj d:\progs\os2\zed\import.obj d:\progs\os2\zed\ini.ob&
+j d:\progs\os2\zed\mleproc.obj d:\progs\os2\zed\palette.obj d:\progs\os2\zed&
+\prnt.obj d:\progs\os2\zed\prntinfo.obj d:\progs\os2\zed\rcntfile.obj d:\pro&
+gs\os2\zed\readfile.obj d:\progs\os2\zed\replace.obj d:\progs\os2\zed\savefi&
+le.obj d:\progs\os2\zed\spawnzed.obj d:\progs\os2\zed\status.obj d:\progs\os&
+2\zed\tab.obj d:\progs\os2\zed\verify.obj d:\progs\os2\zed\zed.obj d:\progs\&
+os2\zed\zed.def d:\progs\os2\zed\about2.h d:\progs\os2\zed\autondnt.h d:\pro&
+gs\os2\zed\autosave.h d:\progs\os2\zed\colorchg.h d:\progs\os2\zed\easyfont.&
+h d:\progs\os2\zed\errormsg.h d:\progs\os2\zed\find.h d:\progs\os2\zed\help.&
+h d:\progs\os2\zed\import.h d:\progs\os2\zed\ini.h d:\progs\os2\zed\palette.&
+h d:\progs\os2\zed\rcntfile.h d:\progs\os2\zed\replace.h d:\progs\os2\zed\re&
+source.h d:\progs\os2\zed\spawnzed.h d:\progs\os2\zed\status.h d:\progs\os2\&
+zed\tab.h d:\progs\os2\zed\verify.h d:\progs\os2\zed\zed.h d:\progs\os2\zed\&
+zed.res .AUTODEPEND
+ @d:
+ cd d:\progs\os2\zed
+ @%write zed.lk1 NAME zed
+ @%append zed.lk1 FIL about.obj,autondnt.obj,autosave.obj,colorchg.obj,easyf&
+ont.obj,errormsg.obj,filenew.obj,fileopen.obj,filesave.obj,filesvas.obj,find&
+.obj,findnext.obj,help.obj,import.obj,ini.obj,mleproc.obj,palette.obj,prnt.o&
+bj,prntinfo.obj,rcntfile.obj,readfile.obj,replace.obj,savefile.obj,spawnzed.&
+obj,status.obj,tab.obj,verify.obj,zed.obj
+ @%append zed.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b zed.imp 
+ @%append zed.lk1 LIBR zed.imp
+!endif
+ *wlink SYS os2v2 pm op st=65536 op maxe=25 op q @zed.lk1
+!ifneq BLANK "zed.res"
+ rc -i $[: -i C:\WATCOM\h -i C:\WATCOM\h\os2 zed.res zed.exe
+!endif
+

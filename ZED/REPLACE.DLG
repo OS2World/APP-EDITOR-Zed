@@ -1,0 +1,22 @@
+#ifndef MAINRESOURCE
+DLGINCLUDE 1 "replace.h"
+#endif
+
+DLGTEMPLATE IDD_REPLACE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "ZED Replace", IDD_REPLACE, 69, 59, 257, 59, FS_SYSMODAL| FS_SCREENALIGN | 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR 
+    BEGIN
+        ENTRYFIELD      "", ID_FINDWHAT, 69, 47, 114, 8, ES_MARGIN | 
+                        WS_GROUP
+        ENTRYFIELD      "", ID_REPLACEWITH, 69, 33, 114, 8, ES_MARGIN
+        AUTOCHECKBOX    "Case ~sensitive", ID_REPLACECASESENSITIVE, 67, 18, 
+                        75, 10
+        DEFPUSHBUTTON      "~Verify", IDB_REPLACEVERIFY, 193, 42, 56, 14
+        PUSHBUTTON      "Rep~lace All", IDB_REPLACEALL, 193, 24, 56, 14
+        PUSHBUTTON      "Cancel", IDB_REPLACECANCEL, 193, 6, 56, 14, 
+                        WS_GROUP
+        RTEXT           "Replace with:", 506, 5, 31, 58, 8, NOT WS_GROUP
+        RTEXT           "Find what:", 501, 13, 45, 50, 8, NOT WS_GROUP
+    END
+END
